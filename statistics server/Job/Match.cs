@@ -134,7 +134,7 @@ public class Match
     private int HotTime(IEnumerable<MatchRawData> matchDatas)
     {
         return matchDatas.GroupBy(x => x.Data.StartDateTime.Hour)
-            .OrderBy(x => x.Count())
+            .OrderByDescending(x => x.Count())
             .ElementAt(0).Key;
     }
 
